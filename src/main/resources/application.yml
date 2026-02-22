@@ -1,0 +1,27 @@
+spring:
+  config:
+    import:
+      - classpath:properties/application-server.yml
+
+#  datasource:
+#    url:
+#    username:
+#    password:
+#    driver-class-name:
+
+
+
+#  jpa:
+#    database:
+#    open-in-view:
+#    database-platform:
+#
+#    show-sql:
+
+#  liquibase:
+#    enabled: true
+#    default-schema:
+#    drop-first: false
+#    change-log: classpath:db/changelog/db.changelog-master.yaml
+#    database-change-log-table:
+#    database-change-log-lock-table:

@@ -1,11 +1,24 @@
 package com.example.userinfoms.dto;
 
-import java.util.List;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import lombok.*;
 
-public record StudentCriterias(
-        String desiredLevel,
+@Embeddable
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class StudentCriterias {
 
-        List<String> preferredCategories,
+    private String desiredLevel;
 
-        Boolean remoteAllowed) {
+    // List<String> не поддерживается внутри @Embeddable,
+    // поэтому храним как строку через запятую: "Backend,Frontend,DevOps"
+    @Column(name = "preferred_categories")
+    private String preferredCategories;
+
+    private Boolean remoteAllowed;
+
 }
